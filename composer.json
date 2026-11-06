@@ -1,0 +1,27 @@
+{
+    "name": "roy-sandip/laravel-view-extended",
+    "description": "Additional, extensible Artisan commands for generating Laravel views.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "illuminate/console": "^13.0",
+        "illuminate/foundation": "^13.0",
+        "illuminate/support": "^13.0",
+        "illuminate/view": "^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RoySandip\\LaravelViewCommands\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RoySandip\\LaravelViewCommands\\LaravelViewCommandsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
