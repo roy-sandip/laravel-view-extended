@@ -18,14 +18,14 @@ Extract or clone this package beside your Laravel application. Add a path reposi
     "repositories": [
         {
             "type": "path",
-            "url": "../laravel-view-commands",
+            "url": "../laravel-view-extended",
             "options": {
                 "symlink": true
             }
         }
     ],
     "require": {
-        "roy-sandip/laravel-view-commands": "*"
+        "roy-sandip/laravel-view-extended": "*"
     }
 }
 ```
@@ -33,7 +33,7 @@ Extract or clone this package beside your Laravel application. Add a path reposi
 Then run:
 
 ```bash
-composer update roy-sandip/laravel-view-commands
+composer update roy-sandip/laravel-view-extended
 ```
 
 ### Install from GitHub
@@ -45,11 +45,11 @@ After publishing this repository to GitHub, add this to your application's `comp
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/roy-sandip/laravel-view-commands"
+            "url": "https://github.com/roy-sandip/laravel-view-extended"
         }
     ],
     "require": {
-        "roy-sandip/laravel-view-commands": "dev-main"
+        "roy-sandip/laravel-view-extended": "dev-main"
     }
 }
 ```
@@ -57,7 +57,7 @@ After publishing this repository to GitHub, add this to your application's `comp
 Then run:
 
 ```bash
-composer update roy-sandip/laravel-view-commands
+composer update roy-sandip/laravel-view-extended
 ```
 
 For a stable release, create and push a version tag (for example `v1.0.0`) and require `^1.0` instead of `dev-main`.
