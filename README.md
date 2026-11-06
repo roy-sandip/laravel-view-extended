@@ -1,4 +1,4 @@
-# Laravel View Commands
+# Laravel View Extended
 
 Additional Artisan commands for generating Laravel views. This package **does not replace or modify** Laravel's built-in `make:view` command.
 
@@ -9,36 +9,15 @@ Additional Artisan commands for generating Laravel views. This package **does no
 
 ## Installation
 
-### Install from a local folder
-
-Extract or clone this package beside your Laravel application. Add a path repository to your application's `composer.json`:
-
-```json
-{
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../laravel-view-extended",
-            "options": {
-                "symlink": true
-            }
-        }
-    ],
-    "require": {
-        "roy-sandip/laravel-view-extended": "*"
-    }
-}
-```
-
-Then run:
+Install the package through Composer:
 
 ```bash
-composer update roy-sandip/laravel-view-extended
+composer require roy-sandip/laravel-view-extended
 ```
 
-### Install from GitHub
+Laravel package discovery automatically registers the service provider.
 
-After publishing this repository to GitHub, add this to your application's `composer.json`:
+If the package is not yet published on Packagist, install it directly from GitHub by adding the VCS repository to your application's `composer.json`:
 
 ```json
 {
@@ -60,9 +39,7 @@ Then run:
 composer update roy-sandip/laravel-view-extended
 ```
 
-For a stable release, create and push a version tag (for example `v1.0.0`) and require `^1.0` instead of `dev-main`.
-
-Laravel package discovery automatically registers the service provider.
+Once a stable version is tagged and available through Packagist, the normal `composer require` command above is sufficient.
 
 ## Commands
 
@@ -78,9 +55,9 @@ php artisan make:view invoices.index
 php artisan make:custom-view invoices.index --cp=layouts.page-template
 ```
 
-The `--cp` value is a Laravel view name, not a filesystem path. The view finder resolves it using the application's configured view paths and namespaces.
+The `--cp` value is a Laravel view name, not a filesystem path. Laravel's view finder resolves it using the application's configured view paths and namespaces.
 
-Other examples:
+More examples:
 
 ```bash
 php artisan make:custom-view invoices.create --cp=layouts.form
@@ -88,7 +65,7 @@ php artisan make:custom-view shipments.index --cp=layouts.admin
 php artisan make:custom-view invoices.index --cp=layouts.page-template --force
 ```
 
-The command inherits Laravel's native view generator behavior and options, including `--extension` and `--force`. When `--cp` is omitted, the parent command's normal behavior is used.
+The custom command inherits Laravel's native view generator behavior and options, including `--extension` and `--force`. When `--cp` is omitted, the parent command's normal behavior is used.
 
 ## Package architecture
 
@@ -116,7 +93,7 @@ Potential future options:
 - `--component`
 - `--crud`
 
-Keep `make:custom-view` as the package command so Laravel's native `make:view` remains untouched.
+The package uses `make:custom-view` so Laravel's native `make:view` remains untouched.
 
 ## License
 
